@@ -5,6 +5,8 @@
 Este proyecto presenta un **dashboard interactivo** construido con **Streamlit**, que permite explorar y visualizar datos del mercado laboral en España entre 2010 y 2025.
 
 ![Demo del sistema](Inicio/demo_web.gif)
+![Demo del sistema](Inicio/demo_web2.gif)
+
 
 ## 🚀 Descripción
 
