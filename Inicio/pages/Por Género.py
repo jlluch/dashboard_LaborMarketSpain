@@ -596,13 +596,16 @@ st.dataframe(
         "Contratos Hombres": "{:,.0f}",
         "Contratos Mujeres": "{:,.0f}",
         "Brecha Relativa (%)": "{:.2%}",
-    }).applymap(
-        lambda x: 'background-color: #ffebee' if isinstance(x, str) and '🔴' in x else
-                  ('background-color: #e8f5e8' if isinstance(x, str) and '🟢' in x else
-                   ('background-color: #fff3e0' if isinstance(x, str) and '🟡' in x else '')),
-        subset=['Tendencia']
+    }).map(
+        lambda x: (
+            "background-color: #ffebee" if isinstance(x, str) and "🔴" in x else
+            "background-color: #e8f5e8" if isinstance(x, str) and "🟢" in x else
+            "background-color: #fff3e0" if isinstance(x, str) and "🟡" in x else
+            ""
+        ),
+        subset=["Tendencia"]
     ),
-    width='stretch'
+    width="stretch"
 )
 
 if len(años_seleccionados) > 1:
