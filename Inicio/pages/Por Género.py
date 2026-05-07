@@ -169,7 +169,7 @@ with st.spinner('Generando análisis temporal por género...'):
             height=450,
             showlegend=True
         )
-        st.plotly_chart(fig1, use_container_width=True)
+        st.plotly_chart(fig1, width='stretch')
     
     with col_graf2:
         fig2 = go.Figure()
@@ -210,7 +210,7 @@ with st.spinner('Generando análisis temporal por género...'):
             height=450,
             showlegend=True
         )
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, width='stretch')
 
 col_insight1, col_insight2, col_insight3, col_insight4 = st.columns(4)
 
@@ -272,7 +272,7 @@ with st.spinner('Generando análisis por tipo de contrato...'):
             barmode="group",
             height=500
         )
-        st.plotly_chart(fig3, use_container_width=True)
+        st.plotly_chart(fig3, width='stretch')
 
     else:
         # Gráfica detallada por tipo y género combinados
@@ -337,7 +337,7 @@ with st.spinner('Generando análisis por tipo de contrato...'):
             height=600
         )
 
-        st.plotly_chart(fig4, use_container_width=True)
+        st.plotly_chart(fig4, width='stretch')
 
 
 
@@ -391,7 +391,7 @@ with st.spinner('Analizando patrones por edad...'):
             xaxis_title="Año", yaxis_title="Demandantes",
             height=400
         )
-        st.plotly_chart(fig5, use_container_width=True)
+        st.plotly_chart(fig5, width='stretch')
     
     with col_edad2:
         fig6 = go.Figure()
@@ -412,7 +412,7 @@ with st.spinner('Analizando patrones por edad...'):
             xaxis_title="Año", yaxis_title="Demandantes",
             height=400
         )
-        st.plotly_chart(fig6, use_container_width=True)
+        st.plotly_chart(fig6, width='stretch')
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
@@ -493,7 +493,7 @@ if años_mapa:
                         title_x=0.5,
                         coloraxis_showscale=(i == len(años_mapa) - 1)
                     )
-                    st.plotly_chart(fig_mapa, use_container_width=True)
+                    st.plotly_chart(fig_mapa, width='stretch')
                     
         else:
             # Datos para Provincias
@@ -539,7 +539,7 @@ if años_mapa:
             #             title_x=0.5,
             #             coloraxis_showscale=(i == len(años_mapa) - 1)
             #         )
-            #         st.plotly_chart(fig_mapa, use_container_width=True)
+            #         st.plotly_chart(fig_mapa, width='stretch')
     
 
 st.markdown("#### 📈 Resumen Comparativo")
@@ -602,7 +602,7 @@ st.dataframe(
                    ('background-color: #fff3e0' if isinstance(x, str) and '🟡' in x else '')),
         subset=['Tendencia']
     ),
-    use_container_width=True
+    width='stretch'
 )
 
 if len(años_seleccionados) > 1:
@@ -677,7 +677,7 @@ if len(años_seleccionados) > 1:
         annotation_text="Paridad (0%)"
     )
     
-    st.plotly_chart(fig_evolucion, use_container_width=True)
+    st.plotly_chart(fig_evolucion, width='stretch')
 
 
 # ---------------------------
