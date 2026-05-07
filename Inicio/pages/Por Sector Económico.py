@@ -161,7 +161,7 @@ elif vista_tipo == "Porcentajes":
         hovermode='x unified'
     )
 
-st.plotly_chart(fig_evolucion, use_container_width=True)
+st.plotly_chart(fig_evolucion, width='stretch')
 
 df_actual = df[df['año'].between(años_seleccionados[0], años_seleccionados[1])]
 
@@ -280,7 +280,7 @@ with col_grafico:
         )
     )
 
-    st.plotly_chart(fig_comp, use_container_width=True)
+    st.plotly_chart(fig_comp, width='stretch')
 
 with col_tabla:
     df_display = df_comparativa[['Sector', 'Contratos', 'Demandantes', 'Ratio']].copy()
@@ -294,7 +294,7 @@ with col_tabla:
             'Demandantes': '{:,.0f}',
             'Ratio': '{:.2f}'
         }),
-        use_container_width=True
+        width='stretch'
     )
 
 
@@ -336,7 +336,7 @@ if sectores_estacional:
         height=400
     )
     
-    st.plotly_chart(fig_estacional, use_container_width=True)
+    st.plotly_chart(fig_estacional, width='stretch')
     
     cols_stats = st.columns(len(sectores_estacional))
     for i, sector in enumerate(sectores_estacional):
@@ -424,7 +424,7 @@ for i, (sector, columna) in enumerate(sectores.items()):
     fig.update_layout(height=400, margin=dict(l=0, r=0, t=40, b=0))
 
     with columnas[i]:
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
 
 st.markdown("**🏆 Regiones Líderes por Sector:**")
@@ -532,7 +532,7 @@ for i, año in enumerate(sorted(años_mapa, reverse=True)):
         fig.update_layout(height=400, margin=dict(l=0, r=0, t=40, b=0))
 
         with columnas[i]:
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
 
 
 # ---------------------------
