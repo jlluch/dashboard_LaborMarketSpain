@@ -111,7 +111,7 @@ with st.spinner('Generando gráfica de evolución temporal...'):
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
     )
 
-st.plotly_chart(fig1, use_container_width=True)
+st.plotly_chart(fig1, width='stretch')
 
 col_insight1, col_insight2, col_insight3, col_insight4 = st.columns(4)
 
@@ -187,7 +187,7 @@ with st.spinner('Calculando promedios mensuales...'):
         showlegend=True
     )
 
-st.plotly_chart(fig2, use_container_width=True)
+st.plotly_chart(fig2, width='stretch')
 
 st.markdown("""
 <div style="background-color: #e8f4fd; padding: 1rem; border-radius: 0.5rem; border-left: 4px solid #1f77b4; margin: 1rem 0;">
@@ -348,7 +348,7 @@ with st.spinner('Generando mapas interactivos...'):
             )
             fig_map_ccaa.update_geos(fitbounds="locations", visible=False)
             fig_map_ccaa.update_layout(height=600)
-            st.plotly_chart(fig_map_ccaa, use_container_width=True)
+            st.plotly_chart(fig_map_ccaa, width='stretch')
         
         with col_mapa2:
             st.info(
@@ -370,7 +370,7 @@ with st.spinner('Generando mapas interactivos...'):
         #    )
         #    fig_map_prov.update_geos(fitbounds="locations", visible=False)
         #    fig_map_prov.update_layout(height=600)
-        #    st.plotly_chart(fig_map_prov, use_container_width=True)
+        #    st.plotly_chart(fig_map_prov, width='stretch')
     
     else:
         # Modo comparativa multi-año
@@ -437,7 +437,7 @@ with st.spinner('Generando mapas interactivos...'):
                     margin=dict(l=0, r=0, t=40, b=0),
                     coloraxis_showscale=(i == len(años_seleccionados) - 1) 
                 )
-                st.plotly_chart(fig_map_ccaa, use_container_width=True)
+                st.plotly_chart(fig_map_ccaa, width='stretch')
         
         st.markdown("##### Por Provincias")
         st.info(
@@ -469,7 +469,7 @@ with st.spinner('Generando mapas interactivos...'):
         #            margin=dict(l=0, r=0, t=40, b=0),
         #            coloraxis_showscale=(i == len(años_seleccionados) - 1) 
         #        )
-        #        st.plotly_chart(fig_map_prov, use_container_width=True)
+        #        st.plotly_chart(fig_map_prov, width='stretch')
 
 # ---------------------------
 # ESTADÍSTICAS RESUMEN
@@ -531,7 +531,7 @@ else:
             "Demandantes": "{:,.0f}",
             "Índice Inserción": "{:.3f}"
         }),
-        use_container_width=True
+        width='stretch'
     )
 
 # ---------------------------
